@@ -19,6 +19,9 @@
     [super viewDidLoad];
     
     [[YXPayment instance] setupAppKey:@"aa" appSecret:@"aa"];
+}
+
+- (IBAction)paymentButtonAction:(id)sender {
     YXPaymentModel* model = [[YXPaymentModel alloc] initWithRefId:@"aaa" title:@"aaa" sum:1 extra:nil];
     [[YXPayment instance] payWithModel:model block:^(BOOL openYXPaySuccess, NSError * _Nullable error) {
         if(error) {
@@ -27,16 +30,6 @@
     }];
 }
 
-- (IBAction)paymentButtonAction:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"UnionPay_YXPayment://hello"] options:@{@"source":@"yx.unionpay.sample"} completionHandler:^(BOOL success) {
-        
-    }];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 
 @end
