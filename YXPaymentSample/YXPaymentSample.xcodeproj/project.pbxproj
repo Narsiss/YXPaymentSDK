@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8272815F84B0C2E989677C6E /* libPods-YXPaymentSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9001C55445C0CFE24BAC4B /* libPods-YXPaymentSample.a */; };
-		F89D16681FD7E50B00296387 /* YXPaymentBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F89D16651FD7E4E900296387 /* YXPaymentBundle.bundle */; };
 		F8EE5D3F1FD13A9C00D7B97D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EE5D3E1FD13A9C00D7B97D /* AppDelegate.m */; };
 		F8EE5D421FD13A9C00D7B97D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EE5D411FD13A9C00D7B97D /* ViewController.m */; };
 		F8EE5D451FD13A9C00D7B97D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8EE5D431FD13A9C00D7B97D /* Main.storyboard */; };
@@ -20,10 +19,6 @@
 /* Begin PBXFileReference section */
 		BA9001C55445C0CFE24BAC4B /* libPods-YXPaymentSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YXPaymentSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D487FA7A93AD792ABA4E8E2D /* Pods-YXPaymentSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YXPaymentSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YXPaymentSample/Pods-YXPaymentSample.debug.xcconfig"; sourceTree = "<group>"; };
-		F89D16641FD7E4E900296387 /* YXPayment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXPayment.h; sourceTree = "<group>"; };
-		F89D16651FD7E4E900296387 /* YXPaymentBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YXPaymentBundle.bundle; sourceTree = "<group>"; };
-		F89D16661FD7E4E900296387 /* YXPaymentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXPaymentModel.h; sourceTree = "<group>"; };
-		F89D16671FD7E4E900296387 /* libYXPayment.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYXPayment.a; sourceTree = "<group>"; };
 		F8EE5D3A1FD13A9C00D7B97D /* YXPaymentSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YXPaymentSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8EE5D3D1FD13A9C00D7B97D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8EE5D3E1FD13A9C00D7B97D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,37 +61,9 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F89D16611FD7E4E900296387 /* YXPaymentSDK */ = {
-			isa = PBXGroup;
-			children = (
-				F89D16621FD7E4E900296387 /* include */,
-				F89D16671FD7E4E900296387 /* libYXPayment.a */,
-			);
-			path = YXPaymentSDK;
-			sourceTree = "<group>";
-		};
-		F89D16621FD7E4E900296387 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				F89D16631FD7E4E900296387 /* YXPayment */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		F89D16631FD7E4E900296387 /* YXPayment */ = {
-			isa = PBXGroup;
-			children = (
-				F89D16641FD7E4E900296387 /* YXPayment.h */,
-				F89D16651FD7E4E900296387 /* YXPaymentBundle.bundle */,
-				F89D16661FD7E4E900296387 /* YXPaymentModel.h */,
-			);
-			path = YXPayment;
-			sourceTree = "<group>";
-		};
 		F8EE5D311FD13A9C00D7B97D = {
 			isa = PBXGroup;
 			children = (
-				F89D16611FD7E4E900296387 /* YXPaymentSDK */,
 				F8EE5D3C1FD13A9C00D7B97D /* YXPaymentSample */,
 				F8EE5D3B1FD13A9C00D7B97D /* Products */,
 				AA160B1EA5AB1A780F76BB2A /* Pods */,
@@ -189,7 +156,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F89D16681FD7E50B00296387 /* YXPaymentBundle.bundle in Resources */,
 				F8EE5D4A1FD13A9C00D7B97D /* LaunchScreen.storyboard in Resources */,
 				F8EE5D471FD13A9C00D7B97D /* Assets.xcassets in Resources */,
 				F8EE5D451FD13A9C00D7B97D /* Main.storyboard in Resources */,

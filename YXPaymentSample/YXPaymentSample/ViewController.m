@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <YXPaymentSDK/YXPayment.h>
 
 @interface ViewController ()
 
@@ -16,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[YXPayment instance] setupAppKey:@"aa" appSecret:@"aa"];
 }
 
 - (IBAction)paymentButtonAction:(id)sender {

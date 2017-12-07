@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "YXPaymentSDK"
 
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
 
   s.summary      = "银信支付SDK"
 
@@ -42,9 +42,9 @@ Pod::Spec.new do |s|
 
   s.resource = ["YXPayment/include/**/*.bundle"]
 
-  s.preserve_paths = 'YXPayment/*.a'
-  
-  s.vendored_libraries = 'YXPayment/*.a'
+  # s.preserve_paths = 'YXPayment/*.a'
+
+  s.vendored_libraries = ['YXPayment/*.a']
 
   s.public_header_files = "YXPayment/include/**/*.{h}"
 
