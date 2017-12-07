@@ -16,9 +16,13 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "YXPaymentSDK"
+
   s.version      = "0.0.1"
+
   s.summary      = "银信支付SDK"
+
   s.description  = <<-DESC
+                        银信支付SDK, 官方支持地址
                    DESC
 
   s.homepage     = "https://github.com/Narsiss/YXPaymentSDK"
@@ -32,15 +36,17 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "6.0"
 
-  s.source       = { :git => "https://github.com/Narsiss/YXPaymentSDK", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/Narsiss/YXPaymentSDK.git", :tag => "#{s.version}" }
 
-  s.source_files  = "YXPaymentSDK/include/**/*.{h,m}"
+  s.source_files  = "YXPayment/include/**/*.{h,m}"
 
-  s.resource = ["include/**/*.bundle"]
+  s.resource = ["YXPayment/include/**/*.bundle"]
+
+  s.preserve_paths = 'YXPayment/*.a'
   
-  s.preserve_paths = '*.a'
+  s.vendored_libraries = 'YXPayment/*.a'
 
-  s.public_header_files = "YXPaymentSDK/include/**/*.{h}"
+  s.public_header_files = "YXPayment/include/**/*.{h}"
 
   s.framework  = "Security"
 
