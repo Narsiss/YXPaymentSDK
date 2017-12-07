@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
 
   # s.preserve_paths = 'YXPayment/*.a'
 
-  s.vendored_libraries = ['YXPayment/*.a']
+  s.ios.vendored_library = 'YXPayment/libYXPayment.a'
 
   s.public_header_files = "YXPayment/include/**/*.{h}"
 
