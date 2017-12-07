@@ -3,5 +3,5 @@ source 'https://github.com/aliyun/aliyun-specs.git'
 
 platform:ios,'8.0'
 target "YXPaymentSample" do
-    pod 'YXPaymentSDK', '~> 0.0.4'
+    pod 'YXPaymentSDK', '~> 0.0.5'
 end

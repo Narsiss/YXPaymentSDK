@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import <YXPaymentSDK/YXPayment.h>
 
-@interface ViewController ()
+@interface ViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -19,10 +19,16 @@
     [super viewDidLoad];
     
     [[YXPayment instance] setupAppKey:@"aa" appSecret:@"aa"];
+    YXPaymentModel* model = [[YXPaymentModel alloc] initWithRefId:@"aaa" title:@"aaa" sum:1 extra:nil];
+    [[YXPayment instance] payWithModel:model block:^(BOOL openYXPaySuccess, NSError * _Nullable error) {
+        if(error) {
+            [UIAlertController alertControllerWithTitle:@"发起支付失败" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+        }
+    }];
 }
 
 - (IBAction)paymentButtonAction:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"YXXYB://hello"] options:@{@"source":@"yx.unionpay.sample"} completionHandler:^(BOOL success) {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"UnionPay_YXPayment://hello"] options:@{@"source":@"yx.unionpay.sample"} completionHandler:^(BOOL success) {
         
     }];
 }

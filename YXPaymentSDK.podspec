@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "YXPaymentSDK"
 
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
 
   s.summary      = "银信支付SDK"
 
@@ -32,9 +32,9 @@ Pod::Spec.new do |s|
 
   s.author             = { "solo" => "donkeycanfly@msn.com" }
 
-  s.platform     = :ios, "6.0"
+  s.platform     = :ios, "8.0"
 
-  s.ios.deployment_target = "6.0"
+  s.ios.deployment_target = "8.0"
 
   s.source       = { :git => "https://github.com/Narsiss/YXPaymentSDK.git", :tag => "#{s.version}" }
 
