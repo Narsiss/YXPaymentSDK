@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "YXPaymentSDK"
 
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
 
   s.summary      = "银信支付SDK"
 
