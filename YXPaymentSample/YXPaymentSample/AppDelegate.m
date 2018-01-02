@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "YXPayment.h"
 @interface AppDelegate ()
 
 @end
@@ -46,6 +46,30 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+//#define __IPHONE_10_0    100000
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > 100000
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
+{
+    YXPaymentResponse res = [YXPayment handleURL:url];
+    if(res == YXPaymentResponseNone) return NO;
+    return YES;
+}
+#endif
+
+- (BOOL) application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    YXPaymentResponse res = [YXPayment handleURL:url];
+    if(res == YXPaymentResponseNone) return NO;
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    YXPaymentResponse res = [YXPayment handleURL:url];
+    if(res == YXPaymentResponseNone) return NO;
+    return YES;
+}
+
 
 
 @end

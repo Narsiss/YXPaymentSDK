@@ -17,13 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [[YXPayment instance] setupAppKey:@"aa" appSecret:@"aa"];
 }
 
 - (IBAction)paymentButtonAction:(id)sender {
-    YXPaymentModel* model = [[YXPaymentModel alloc] initWithRefId:@"aaa" title:@"aaa" sum:1 extra:nil];
-    [[YXPayment instance] payWithModel:model block:^(BOOL openYXPaySuccess, NSError * _Nullable error) {
+    [YXPayment payWithOrderNo:@"aaa" scheme:@"YXPaymentSample" block:^(BOOL openYXPaySuccess, NSError * _Nullable error) {
         if(error) {
             [UIAlertController alertControllerWithTitle:@"发起支付失败" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
         }

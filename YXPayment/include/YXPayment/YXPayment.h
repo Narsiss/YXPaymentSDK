@@ -7,21 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YXPaymentModel.h"
 
 @interface YXPayment : NSObject
 
-typedef void (^YXPaymetnBlock)(YXPaymentModel * _Nullable model, NSError*  _Nullable error);
-
-//日志打印开关
-@property (nonatomic,assign) BOOL showDebugLog;
-
-+(NSString* _Nonnull)version;
-
-/**
- *  获取支付组件单例
- **/
-+(YXPayment* _Nonnull)instance;
+typedef NS_ENUM(NSInteger,YXPaymentResponse)
+{
+    YXPaymentResponseRepeatOrder = -3,    //重复支付订单错误
+    YXPaymentResponseQueryFailed = -2,    //查询订单失败
+    YXPaymentResponseFailed = -1,         //支付失败
+    YXPaymentResponseNone = 0,            //非银信支付URL
+    YXPaymentResponseCanceled = 1,        //支付取消
+    YXPaymentResponseNullOrlder = 2,      //订单查询失败
+    YXPaymentResponseFinished = 3,        //订单完成
+};
 
 /*
  * 处理URL
@@ -29,29 +27,13 @@ typedef void (^YXPaymetnBlock)(YXPaymentModel * _Nullable model, NSError*  _Null
  * 在 AppDelegate.m （application:openURL:) 中使用
  * @param url url
  */
-+ (BOOL)handleURL:(NSURL *_Nonnull)url;
-
-/**
- *  获取支付组件单例
- *  @param appKey  应用AppKey
- *  @param appSecret  应用AppSecret
- **/
--(void)setupAppKey:(NSString* _Nonnull)appKey appSecret:(NSString* _Nonnull)appSecret;
-
-/**
- *  添加响应block,支付发起成功/支付发起失败/支付成功/支付失败/订单取消时,将会调用block
- **/
--(void)addBlock:(YXPaymetnBlock _Nonnull)block;
-
-/**
- *  移除响应block
- **/
--(void)deleteBlock:(YXPaymetnBlock _Nonnull)block;
++ (YXPaymentResponse)handleURL:(NSURL *_Nonnull)url;
 
 /**
  *  调用支付
- *  @param model 支付信息
+ *  @param orderNo 银信支付订单号
+ *  @param scheme 支付完成后调用此scheme返回当前APP
  **/
--(void)payWithModel:(YXPaymentModel* _Nonnull)model block:(void (^_Nullable)(BOOL openYXPaySuccess,NSError* _Nullable error))block;
++(void)payWithOrderNo:(NSString* _Nonnull )orderNo scheme:(NSString* _Nonnull)scheme block:(void (^_Nullable)(BOOL openYXPaySuccess,NSError* _Nullable error))block;
 
 @end
