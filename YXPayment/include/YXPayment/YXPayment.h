@@ -12,8 +12,6 @@
 
 typedef NS_ENUM(NSInteger,YXPaymentResponse)
 {
-    YXPaymentResponseRepeatOrder = -3,    //重复支付订单错误
-    YXPaymentResponseQueryFailed = -2,    //查询订单失败
     YXPaymentResponseFailed = -1,         //支付失败
     YXPaymentResponseNone = 0,            //非银信支付URL
     YXPaymentResponseCanceled = 1,        //支付取消
