@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,29 +12,67 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CRr-iV-WZu"/>
+                        <viewControllerLayoutGuide type="bottom" id="7yB-pE-xjX"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKp-hg-xlP">
-                                <rect key="frame" x="112" y="588" width="150" height="32"/>
+                                <rect key="frame" x="112" y="304" width="150" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="N3B-bT-KSp"/>
                                     <constraint firstAttribute="height" constant="32" id="q5J-gl-082"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="发起支付"/>
                                 <connections>
                                     <action selector="paymentButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FM7-Aq-C7b"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="订单号" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="NOw-KD-QUd">
+                                <rect key="frame" x="87.5" y="154" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HKv-0m-Elu"/>
+                                    <constraint firstAttribute="width" constant="200" id="TQh-Ok-Lg1"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCO-2Y-9mM">
+                                <rect key="frame" x="87.5" y="220" width="77" height="30"/>
+                                <state key="normal" title="切换订单号"/>
+                                <connections>
+                                    <action selector="switchOrderNoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nue-mI-BmW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN1-4X-qWP">
+                                <rect key="frame" x="180.5" y="235" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oKp-hg-xlP" secondAttribute="bottom" constant="47" id="DHH-ob-aHX"/>
-                            <constraint firstItem="oKp-hg-xlP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pdF-Gx-EAE"/>
+                            <constraint firstItem="oKp-hg-xlP" firstAttribute="top" secondItem="NOw-KD-QUd" secondAttribute="bottom" constant="100" id="44y-3H-4Gv"/>
+                            <constraint firstItem="NOw-KD-QUd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cIA-2S-zDv"/>
+                            <constraint firstItem="NOw-KD-QUd" firstAttribute="top" secondItem="CRr-iV-WZu" secondAttribute="bottom" constant="134" id="gZl-CE-7mE"/>
+                            <constraint firstItem="xN1-4X-qWP" firstAttribute="centerY" secondItem="RCO-2Y-9mM" secondAttribute="centerY" id="lmG-6A-yJa"/>
+                            <constraint firstItem="RCO-2Y-9mM" firstAttribute="leading" secondItem="NOw-KD-QUd" secondAttribute="leading" id="nr1-AW-31i"/>
+                            <constraint firstItem="RCO-2Y-9mM" firstAttribute="top" secondItem="NOw-KD-QUd" secondAttribute="bottom" constant="16" id="p4g-9i-1bd"/>
+                            <constraint firstItem="oKp-hg-xlP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pdF-Gx-EAE"/>
+                            <constraint firstItem="xN1-4X-qWP" firstAttribute="leading" secondItem="RCO-2Y-9mM" secondAttribute="trailing" constant="16" id="rN7-9q-317"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="orderNoDescLabel" destination="xN1-4X-qWP" id="vLg-jS-6X1"/>
+                        <outlet property="orderNoTextField" destination="NOw-KD-QUd" id="ph4-mc-rxq"/>
+                        <outlet property="payButton" destination="oKp-hg-xlP" id="bIf-VO-qk8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

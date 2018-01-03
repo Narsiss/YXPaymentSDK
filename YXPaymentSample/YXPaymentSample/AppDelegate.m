@@ -51,23 +51,38 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > 100000
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
 {
-    YXPaymentResponse res = [YXPayment handleURL:url];
-    if(res == YXPaymentResponseNone) return NO;
-    return YES;
+    return [self handleURL:url];
 }
 #endif
 
 - (BOOL) application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    YXPaymentResponse res = [YXPayment handleURL:url];
-    if(res == YXPaymentResponseNone) return NO;
-    return YES;
+    
+    return [self handleURL:url];
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    YXPaymentResponse res = [YXPayment handleURL:url];
-    if(res == YXPaymentResponseNone) return NO;
-    return YES;
+    return [self handleURL:url];
+}
+
+-(BOOL)handleURL:(NSURL *)url {
+    return [YXPayment handleURL:url block:^(YXPaymentResponse response, NSString * _Nullable msg) {
+        NSLog(@"MSG: %@",msg);
+        switch (response) {
+            case YXPaymentResponseNone:
+                NSLog(@"RES: 非银信支付URL");
+                break;
+            case YXPaymentResponseFailed:
+                NSLog(@"RES: 交易失败");
+                break;
+            case YXPaymentResponseFinished:
+                NSLog(@"RES: 交易成功");
+                break;
+                
+            default:
+                break;
+        }
+    }];
 }
 
 

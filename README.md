@@ -3,7 +3,7 @@
 
 SDK安装:
 
-    pod 'YXPaymentSDK', '~> 0.0.7'
+    pod 'YXPaymentSDK', '~> 0.0.8'
 
 
 使用说明:
@@ -16,4 +16,4 @@ SDK安装:
 
 	4. 调用 [YXPayment payWithOrderNo: scheme: block:] 发起支付
 
-	5. 支付结束后,在AppDelegate调用 [YXPayment handleURL:] 获取支付响应结果
+	5. 支付结束后,在AppDelegate调用 [YXPayment handleURL: block:] 获取支付响应结果
