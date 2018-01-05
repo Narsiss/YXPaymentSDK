@@ -12,7 +12,7 @@ SDK安装:
 
 	2. info.plist -> LSApplicationQueriesSchemes -> Add Item -> YXPayment
 
-	3. 调用银信开放平台API 生成订单 , 获取OrderId
+	3. 调用银信API 生成订单 , 获取OrderNo
 
 	4. 调用 [YXPayment payWithOrderNo: scheme: block:] 发起支付
 
