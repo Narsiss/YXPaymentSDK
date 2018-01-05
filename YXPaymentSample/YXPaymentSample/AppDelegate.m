@@ -66,8 +66,8 @@
 }
 
 -(BOOL)handleURL:(NSURL *)url {
-    return [YXPayment handleURL:url block:^(YXPaymentResponse response, NSString * _Nullable msg) {
-        NSLog(@"MSG: %@",msg);
+    return [YXPayment handleURL:url block:^(YXPaymentResponse response, NSDictionary* data) {
+        NSLog(@"DATA: %@",data);
         switch (response) {
             case YXPaymentResponseNone:
                 NSLog(@"RES: 非银信支付URL");
@@ -75,7 +75,7 @@
             case YXPaymentResponseFailed:
                 NSLog(@"RES: 交易失败");
                 break;
-            case YXPaymentResponseFinished:
+            case YXPaymentResponseSuccess:
                 NSLog(@"RES: 交易成功");
                 break;
                 

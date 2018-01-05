@@ -27,16 +27,7 @@
 }
 
 - (IBAction)switchOrderNoAction:(id)sender {
-    NSArray<NSDictionary*>* orderInfos= @[@{@"no":@"aa",@"desc":@"测试响应成功"},
-                                          @{@"no":@"aa",@"desc":@"测试响应失败"},
-                                          @{@"no":@"aa",@"desc":@"测试响应重复"}];
-    NSInteger tag = self.payButton.tag + 1;
-    if(tag >= orderInfos.count) tag = 0;
-    
-    [self.orderNoTextField setText:orderInfos[tag][@"no"]];
-    [self.orderNoDescLabel setText:orderInfos[tag][@"desc"]];
-    
-    self.payButton.tag = tag;
+    [self.orderNoTextField setText:@"ORD20180103293222223"];
 }
 
 - (IBAction)paymentButtonAction:(id)sender {

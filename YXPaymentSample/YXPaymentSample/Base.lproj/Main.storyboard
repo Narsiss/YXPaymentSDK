@@ -43,14 +43,14 @@
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCO-2Y-9mM">
-                                <rect key="frame" x="87.5" y="220" width="77" height="30"/>
-                                <state key="normal" title="切换订单号"/>
+                                <rect key="frame" x="87.5" y="220" width="108" height="30"/>
+                                <state key="normal" title="填入测试订单号"/>
                                 <connections>
                                     <action selector="switchOrderNoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nue-mI-BmW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN1-4X-qWP">
-                                <rect key="frame" x="180.5" y="235" width="0.0" height="0.0"/>
+                                <rect key="frame" x="211.5" y="235" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

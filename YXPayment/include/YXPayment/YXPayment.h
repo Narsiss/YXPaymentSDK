@@ -12,13 +12,12 @@
 
 typedef NS_ENUM(NSInteger,YXPaymentResponse)
 {
-    YXPaymentResponseRepeatOrder = -3,    //重复支付订单错误
-    YXPaymentResponseQueryFailed = -2,    //查询订单失败
-    YXPaymentResponseFailed = -1,         //支付失败
-    YXPaymentResponseNone = 0,            //非银信支付URL
-    YXPaymentResponseCanceled = 1,        //支付取消
-    YXPaymentResponseNullOrlder = 2,      //订单查询失败
-    YXPaymentResponseFinished = 3,        //订单完成
+    YXPaymentResponseNullOrder   = -4,      //订单查询失败
+    YXPaymentResponseRepeatOrder = -3,      //重复支付订单错误
+    YXPaymentResponseFailed      = -2,      //支付失败
+    YXPaymentResponseCanceled    = -1,      //支付取消
+    YXPaymentResponseNone        = 0,       //非银信支付URL
+    YXPaymentResponseSuccess     = 1,       //订单完成
 };
 
 /*
@@ -27,7 +26,7 @@ typedef NS_ENUM(NSInteger,YXPaymentResponse)
  * 在 AppDelegate.m （application:openURL:) 中使用
  * @param url url
  */
-+ (BOOL)handleURL:(NSURL *_Nonnull)url block:(void (^_Nullable)(YXPaymentResponse response,NSString* _Nullable msg))block;
++ (BOOL)handleURL:(NSURL *_Nonnull)url block:(void (^_Nullable)(YXPaymentResponse response,NSDictionary* _Nonnull data))block;
 
 
 /**

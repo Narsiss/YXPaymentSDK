@@ -3,7 +3,7 @@
 
 SDK安装:
 
-    pod 'YXPaymentSDK', '~> 0.1.0'
+    pod 'YXPaymentSDK', '~> 0.1.1'
 
 
 使用说明:
