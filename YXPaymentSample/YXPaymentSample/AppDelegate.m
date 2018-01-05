@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "YXPayment.h"
-@interface AppDelegate ()
+@interface AppDelegate ()<YXPaymentDelegate>
 
 @end
 
@@ -66,23 +66,25 @@
 }
 
 -(BOOL)handleURL:(NSURL *)url {
-    return [YXPayment handleURL:url block:^(YXPaymentResponse response, NSDictionary* data) {
-        NSLog(@"DATA: %@",data);
-        switch (response) {
-            case YXPaymentResponseNone:
-                NSLog(@"RES: 非银信支付URL");
-                break;
-            case YXPaymentResponseFailed:
-                NSLog(@"RES: 交易失败");
-                break;
-            case YXPaymentResponseSuccess:
-                NSLog(@"RES: 交易成功");
-                break;
-                
-            default:
-                break;
-        }
-    }];
+    return [YXPayment handleURL:url delegate:self];
+}
+
+-(void)onResponseForYXPaymentWithResult:(YXPaymentResponse)response info:(NSDictionary *)info{
+    NSLog(@"DATA: %@",info);
+    switch (response) {
+        case YXPaymentResponseNone:
+            NSLog(@"RES: 非银信支付URL");
+            break;
+        case YXPaymentResponseFailed:
+            NSLog(@"RES: 交易失败");
+            break;
+        case YXPaymentResponseSuccess:
+            NSLog(@"RES: 交易成功");
+            break;
+            
+        default:
+            break;
+    }
 }
 
 

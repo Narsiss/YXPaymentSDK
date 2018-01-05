@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface YXPayment : NSObject
-
 typedef NS_ENUM(NSInteger,YXPaymentResponse)
 {
     YXPaymentResponseNullOrder   = -4,      //订单查询失败
@@ -20,6 +18,25 @@ typedef NS_ENUM(NSInteger,YXPaymentResponse)
     YXPaymentResponseSuccess     = 1,       //订单完成
 };
 
+@protocol YXPaymentDelegate
+
+@required
+
+-(void)onResponseForYXPaymentWithResult:(YXPaymentResponse)response info:(NSDictionary* _Nonnull)info;
+
+@end
+
+@interface YXPayment : NSObject
+
+/*
+ * 处理URL
+ * 支付完成后,将会返回到应用,使用此方法判断是否为银信支付结果返回
+ * 在 AppDelegate.m （application:openURL:) 中使用
+ * @param url url
+ * @param delegate delegate
+ */
++ (BOOL)handleURL:(NSURL *_Nonnull)url delegate:(id<YXPaymentDelegate> _Nonnull)delegate;
+
 /*
  * 处理URL
  * 支付完成后,将会返回到应用,使用此方法判断是否为银信支付结果返回
@@ -27,7 +44,6 @@ typedef NS_ENUM(NSInteger,YXPaymentResponse)
  * @param url url
  */
 + (BOOL)handleURL:(NSURL *_Nonnull)url block:(void (^_Nullable)(YXPaymentResponse response,NSDictionary* _Nonnull data))block;
-
 
 /**
  *  调用支付
@@ -37,3 +53,4 @@ typedef NS_ENUM(NSInteger,YXPaymentResponse)
 +(void)payWithOrderNo:(NSString* _Nonnull )orderNo scheme:(NSString* _Nonnull)scheme block:(void (^_Nullable)(BOOL openYXPaySuccess,NSError* _Nullable error))block;
 
 @end
+
