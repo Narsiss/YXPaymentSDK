@@ -3,7 +3,14 @@
 
 SDK安装:
 
-    pod 'YXPaymentSDK', '~> 0.1.3'
+	1. 使用CocoaPods集成
+
+    	pod 'YXPaymentSDK', '~> 0.1.4'
+
+    2. 复制集成
+
+        a. 拷贝YXPayment下文件至项目中
+        b. 添加 Security.framework
 
 
 使用说明:
