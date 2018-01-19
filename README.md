@@ -5,7 +5,7 @@ SDK安装:
 
 	1. 使用CocoaPods集成
 
-    	pod 'YXPaymentSDK', '~> 0.1.4'
+    	pod 'YXPaymentSDK', '~> 0.1.5'
 
     2. 复制集成
 

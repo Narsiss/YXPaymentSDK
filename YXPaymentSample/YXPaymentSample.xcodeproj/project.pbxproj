@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8272815F84B0C2E989677C6E /* libPods-YXPaymentSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9001C55445C0CFE24BAC4B /* libPods-YXPaymentSample.a */; };
+		8272815F84B0C2E989677C6E /* libPods-YXPaymentSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9001C55445C0CFE24BAC4B /* libPods-YXPaymentSample.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		F8EE5D3F1FD13A9C00D7B97D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EE5D3E1FD13A9C00D7B97D /* AppDelegate.m */; };
 		F8EE5D421FD13A9C00D7B97D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EE5D411FD13A9C00D7B97D /* ViewController.m */; };
 		F8EE5D451FD13A9C00D7B97D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8EE5D431FD13A9C00D7B97D /* Main.storyboard */; };
@@ -299,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -348,7 +348,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
